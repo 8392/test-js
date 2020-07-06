@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "asadflkjuoiqeuroqiytl1897439 18234./MS/zx><M>M.ADSF.M kjlkewj trlkwe jroi hjohnmnnm bzcnvbZmcxbvcmnbmncvkjhafyqoiurehkjsahfkjash fdkjadshfiualqreuoiythfdkahdf";
+
+		// 创建对象
+		var obj = {};
+
+		for (var i = 0; i < str.length; i++) {
+			// 获取当前字符串中遍历到的字符
+			var ch = str.charAt(i);
+			// 判断 obj 对象中是否存在该字符所表示的属性
+			if (obj[ch] == undefined) // 未出现过
+				obj[ch] = 1;
+			else // 已出现过
+				obj[ch]++;
+		}
+		console.log(obj);
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*
+		 * 求 lower 到 upper 之间的随机整数
+		 * @param lower 数字范围下限，包括
+		 * @param upper 数字范围上限，不包括
+		 */
+		function random(lower, upper) {
+			return Math.floor(Math.random() * (upper - lower)) + lower;
+		}
+
+		var arr = [];
+		for (var i = 0; i < 1000; i++) {
+			arr.push(random(17, 79));
+		}
+		console.log(arr);
+	</script>
+</body>
+</html>

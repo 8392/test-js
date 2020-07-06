@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>删除节点</h1>
+	<button id="first">删除第一行</button>
+	<button id="last">删除最后一行</button>
+
+	<table border="1">
+		<tr>
+			<td>1_1</td>
+			<td>1_2</td>
+			<td>1_3</td>
+		</tr>
+		<tr>
+			<td>2_1</td>
+			<td>2_2</td>
+			<td>2_3</td>
+		</tr>
+		<tr>
+			<td>3_1</td>
+			<td>3_2</td>
+			<td>3_3</td>
+		</tr>
+		<tr>
+			<td>4_1</td>
+			<td>4_2</td>
+			<td>4_3</td>
+		</tr>
+		<tr>
+			<td>5_1</td>
+			<td>5_2</td>
+			<td>5_3</td>
+		</tr>
+		<tr>
+			<td>6_1</td>
+			<td>6_2</td>
+			<td>6_3</td>
+		</tr>
+	</table>
+
+	<script>
+		// 根据 id 查找元素
+		function $(id){
+			return document.getElementById(id);
+		}
+
+		/*// 删除第一行
+		$("first").onclick = function(){
+			// 表格 <table>
+			var _tab = document.getElementsByTagName("tbody")[0];
+
+			// 所有行 <tr> 的集合
+			var trs = document.getElementsByTagName("tr");
+			// 第一行 <tr>
+			var _first = trs[0];
+			// 删除
+			_tab.removeChild(_first);
+		}*/
+
+		// 删除第一行
+		$("first").onclick = function(){
+			// 所有行 <tr> 的集合
+			var trs = document.getElementsByTagName("tr");
+			// 第一行 <tr>
+			var _first = trs[0];
+			// 删除
+			_first.parentNode.removeChild(_first);
+		}
+
+		$("last").onclick = function(){
+			// 表格 <table>
+			var _tab = document.getElementsByTagName("tbody")[0];
+
+			// 所有行 <tr> 的集合
+			var trs = document.getElementsByTagName("tr");
+			// 最后一行 <tr>
+			var _last = trs[trs.length - 1];
+			// 删除
+			_tab.removeChild(_last);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>删除</h1>
+
+	<table border="1">
+		<tr>
+			<td>1_1</td>
+			<td>1_2</td>
+			<td>1_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+		<tr>
+			<td>2_1</td>
+			<td>2_2</td>
+			<td>2_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+		<tr>
+			<td>3_1</td>
+			<td>3_2</td>
+			<td>3_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+		<tr>
+			<td>4_1</td>
+			<td>4_2</td>
+			<td>4_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+		<tr>
+			<td>5_1</td>
+			<td>5_2</td>
+			<td>5_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+		<tr>
+			<td>6_1</td>
+			<td>6_2</td>
+			<td>6_3</td>
+			<td><a href="javascript:void(0);">删除</a></td>
+		</tr>
+	</table>
+
+	<script>
+		// 根据标签找出所有“删除”的超级链接
+		var links = document.getElementsByTagName("a");
+
+		// 为每个链接绑定点击事件
+		for (var i = 0, l = links.length; i < l; i++) {
+			// 为当前遍历到的链接绑定点击事件
+			links[i].onclick = function(){
+				// 使用 this 表示当前点击的“删除”链接DOM对象
+				// 获取当前点击 “删除” 链接所在行的DOM对象
+				var _tr = this.parentNode.parentNode;
+				// 删除
+				_tr.parentNode.removeChild(_tr);
+			}
+		}
+	</script>
+</body>
+</html>

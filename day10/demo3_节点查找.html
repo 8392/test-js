@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		<div>child</div>
+		<span id="span_1">span 1</span>
+		<a href="#" id="link">链接</a>
+		<p id="p_1">段落1</p>
+	</div>
+
+	<script>
+		function $(id) {
+			return document.getElementById(id);
+		}
+
+		// 获取 div#box 元素节点
+		var _box = $("box");
+		// 父节点
+		var _parent = _box.parentNode;
+		// console.log(_parent);
+
+		// 所有孩子节点
+		var _childNodes = _box.childNodes;
+		// console.log(_childNodes);
+
+		// 所有孩子元素节点
+		var _children = _box.children;
+		// console.log(_children);
+
+		// 第一个孩子节点
+		var _first = _box.firstChild;
+		// console.log(_first);
+
+		// 第一个孩子元素节点
+		var _first = _box.firstElementChild;
+		// console.log(_first);
+
+
+		// 超级链接
+		var _link = $("link");
+		// 前一个兄弟节点
+		var _prev = _link.previousSibling;
+		// console.log(_prev);
+		// 前一个兄弟元素节点
+		var _prev = _link.previousElementSibling;
+		console.log(_prev);
+	</script>
+</body>
+</html>

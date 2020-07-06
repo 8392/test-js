@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="box">
+		w<div>child</div>
+		<span id="span_1">span 1</span>
+		<a href="#" id="link">链接</a>
+		<p id="p_1">段落1</p>
+	</div>
+
+	<script>
+		// 获取 div#box 的所有孩子节点
+		var _box = document.getElementById("box");
+		var _childNodes = _box.childNodes;
+
+		// text 保存所有文本节点, element 保存所有元素节点
+		var text = [], element = [];
+		console.log(_childNodes[0]);
+		console.log(_box.children[2]);
+		for (var i = 0, l = _childNodes.length; i < l; i++) {
+			// 节点类型
+			if (_childNodes[i].nodeType === 1) { // 元素
+				element.push(_childNodes[i]);
+			} else if (_childNodes[i].nodeType === 3) { // 文本
+				text.push(_childNodes[i]);
+			}
+			
+
+			// 节点名称
+			// console.log(_childNodes[i].nodeName);
+
+			// 节点值
+			// console.log(_childNodes[i].nodeValue);
+		}
+
+		console.log(text);
+		console.log(element);
+	</script>
+</body>
+</html>

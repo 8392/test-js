@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="num1">
+	<select id="operator">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>%</option>
+	</select>
+	<input type="text" id="num2">
+	<button id="eq">=</button>
+	<input type="text" id="result" readonly="readonly">
+
+	<script>
+		document.getElementById("eq").onclick = function(){
+			// 获取两个操作数
+			var _num1 = Number(document.getElementById("num1").value),
+				_num2 = Number(document.getElementById("num2").value);
+			// 获取运算符
+			var _operator = document.getElementById("operator").value;
+
+			var result; // 保存计算结果的变量
+			// 判断运算符，执行运算操作
+			switch(_operator) {
+				case "+":
+					result = _num1 + _num2;
+					break;
+				case "-":
+					result = _num1 - _num2;
+					break;
+				case "*":
+					result = _num1 * _num2;
+					break;
+				case "/":
+					result = _num1 / _num2;
+					break;
+				case "%":
+					result = _num1 % _num2;
+					break;
+			}
+			// 显示计算结果
+			document.getElementById("result").value = result.toFixed(2);
+		}
+
+		// 计算两个数字之和
+		/*function add(num1, num2) {
+			// console.log(num1, num2);
+			// console.log(arguments);
+			// console.log("实际参数个数：" + arguments.length)
+			return num1 + num2;
+		}*/
+
+		var result = add(3,4,5,6);
+		console.log("计算结果：" + result);
+
+		/*var sum = 0;
+		for(var i = 1; i <= 100; i++) {
+			sum += i;
+		}*/
+
+		/* 计算一系列数字之和 */
+		function add() {
+			console.log("argument", arguments)
+			var sum = 0;
+			for (var i = 0; i < arguments.length; i++) {
+				sum += arguments[i];
+			}
+			return sum;
+		}
+	</script>
+</body>
+</html>

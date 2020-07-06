@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="copy">复制</button>
+
+	<img src="https://misc.360buyimg.com/mtd/pc/index_2017/2.0.1/static/images/sprite.head.png">
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+
+	<div style="border:1px solid #f00;" id="box">
+		
+	</div>
+
+	<script>
+		/*document.getElementById("copy").onclick = function(){
+			// 获取图片DOM元素
+			var _img = document.getElementsByTagName("img")[0];
+			// 复制图片
+			var _copy = _img.cloneNode();
+			// 将复制后的图片添加到  div#box 中
+			document.getElementById("box").appendChild(_copy);
+		}*/
+	</script>
+
+	<script>
+		document.getElementById("copy").onclick = function(){
+			// 获取ul DOM元素
+			var _ul = document.getElementsByTagName("ul")[0];
+			// 复制 ul
+			var _copy = _ul.cloneNode(true);
+			// 将复制后的 ul 添加到  div#box 中
+			document.getElementById("box").appendChild(_copy);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// var url = "https://www.baidu.com/s?wd=html5&rsv_spt=1&rsv_iqid=0xff52079000030dcf";
+		var url = "https://www.baidu.com/s?wd=test&ie=utf-8&rsv_op=2hP4Zf34LQSZTP6IQ9P7d1YN7chfX8XfKTZ0eTUQW8U261R8SaQS74O7O2Ng5g4cg4X18TZMZ1QbQ8I471Ke6hgKeM6dZS4N&tn=06074089_4_pg&ch=&rsv_su=1PRX3KMe2R4TJgUScbe7bU2W7UOV1SeIV3h0ba39QQRhO0MR057Q1c6bcXJ4MQScN3d4ZK9b864dNQRJZS2XLQM11PWZTVO1"
+
+		function parseQueryString(url) {
+			// 定义变量，来保存解析后的对象
+			var obj = {};
+
+			// 查找 ? 号位置：indexOf()
+			var index = url.indexOf("?");
+			// 将 url ?后字符串截取出: slice(start, end)
+			var queryString = url.slice(index + 1);
+			// 使用 & 将查询字符串分割
+			var params = queryString.split("&");
+			// 遍历数组元素
+			params.forEach(function(curr){
+				// 使用 = 将当前 "key=value" 格式的字符串分割
+				var parts = curr.split("=");
+				// 将parts数组中第一个元素作为对象的属性名，第二个元素作为对象的属性值
+				var name = parts[0],
+					value = parts[1];
+				obj[name] = value;
+			});
+			// 返回生成的对象
+			return obj;
+		}
+
+		var o = parseQueryString(url);
+		console.log(o)
+	</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*var array = [65, 72, 43, 85, 17];
+
+		for (var j = 0; j < array.length - 1; j++) {
+			for (var i = 0; i < array.length - 1 - j; i++) {
+				if (array[i] > array[i+1]) {
+					var tmp = array[i];
+					array[i] = array[i + 1];
+					array[i + 1] = tmp;
+				}
+			}
+		}
+		console.log(array)*/
+
+		/*// 第一轮比较
+		for (var i = 0; i < 4; i++) {
+			if (array[i] > array[i+1]) {
+				var tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
+			}
+		}
+		console.log(array);
+
+		// 第二轮比较
+		for (var i = 0; i < 3; i++) {
+			if (array[i] > array[i+1]) {
+				var tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
+			}
+		}
+		console.log(array);
+
+		// 第三轮比较
+		for (var i = 0; i < 2; i++) {
+			if (array[i] > array[i+1]) {
+				var tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
+			}
+		}
+		console.log(array);
+
+		// 第四轮比较
+		for (var i = 0; i < 1; i++) {
+			if (array[i] > array[i+1]) {
+				var tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
+			}
+		}
+		console.log(array);*/
+	</script>
+
+	<script>
+		// var array = [100, 55, 67, 70, 79, 82, 87, 92, 97, 99];
+		var array = [82, 99, 55, 92, 67, 79, 87, 100, 70, 97];
+		var N = array.length; 
+		for (var i = 0; i < N - 1; i++) { // 轮数
+			for (var j = 0; j < N - 1 - i; j++) { // 次数
+				if (array[j] > array[j+1]) {
+					var t = array[j];
+					array[j] = array[j + 1];
+					array[j + 1] = t;
+				}
+			}
+		}
+		console.log(array);
+	</script>
+</body>
+</html>

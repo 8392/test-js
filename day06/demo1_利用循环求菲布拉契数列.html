@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 定义函数，求数列指定项
+		function fn(num) {
+			if (num <= 2)
+				return 1;
+			var i = 1, j = 1, r, k = 3;
+			for ( ; k <= num; k++) {
+				r = i + j;
+				i = j;
+				j = r;
+			}
+			return r;
+		}
+
+
+		console.time();
+		console.log(fn(40));
+		console.timeEnd();
+
+		
+		/*// 循环，调用函数求前10项每项
+		for(var i = 1; i <= 10; i++) {
+			console.log("第"+ i +"项：" + fn(i));
+		}*/
+
+		/*// 定义变量i,j保存前两项，r保存计算后一项结果
+		var i = 1, j = 1, r;
+
+		// k表示所求项
+		for (var k = 3; k <= 20; k++) {
+			r = i + j;
+			i = j;
+			j = r;
+
+			console.log("第"+ k +"项：" + r);
+		}*/
+
+		/*// 求第3项
+		r = i + j;
+		i = j;
+		j = r;
+
+		// 求第4项
+		r = i + j;
+		i = j;
+		j = r;
+
+		// 求第5项
+		r = i + j;
+		i = j;
+		j = r;*/
+	</script>
+</body>
+</html>

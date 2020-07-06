@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 保存学生成绩
+		var scores = [87, 79, 67, 92, 55];
+		// 向末尾追加
+		scores.push(99, 82, 76);		
+		// 向开头插入
+		scores.unshift(100, 97, 88);
+		// 指定索引处插入
+		scores.splice(2, 0, 70, 71, 91);
+
+		// scores[scores.length] = 5;
+
+		// 删除末尾元素
+		var r = scores.pop();
+		console.log(r)
+		// 删除头部元素
+		r = scores.shift();
+		console.log(r);
+		// 指定下标处删除
+		r = scores.splice(2, 3, 100)
+		console.log(r);
+
+		// 清空数组
+		// scores.length = 0;
+
+		console.log(scores);
+		// 反转数组元素
+		scores.reverse();
+		console.log(scores);
+		// scores.sort();
+		scores.sort(function(a, b){
+			return a - b;
+			/*if (a < b)
+				return -1;
+			if (a == b)
+				return 0;
+			if (a > b)
+				return 1;*/
+		});
+
+		console.log(scores);
+
+		var array = [1,2,3,4,4,5,6];
+		// var r = scores.concat(array);
+		var r = scores.concat(3, 4, 5, 7, 9, 10);
+		console.log(scores);
+		console.log(array);
+		console.log(r);
+
+		var r = scores.join("/")
+		console.log(r);
+
+		console.log(scores);
+		var r = scores.slice(1, -3);
+		console.log(r);
+
+		console.log(scores.toString());
+	</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "hello千锋";
+
+		/*for (var i = 0; i < str.length; i++) {
+			console.log(str[i])
+		}*/
+
+		for (var i = 0; i < str.length; i++) {
+			// console.log(str.charCodeAt(i));
+			// console.log(str.charAt(i));
+		}
+
+		/*var char = String.fromCharCode(21316);
+		console.log(char);*/
+		/*var str = "";
+		for (var i = 21315; i <= 38155; i++) {
+			str += String.fromCharCode(i) + "   ";
+		}
+		console.log(str);*/
+	</script>
+
+	<script>
+		// replace
+
+		var str = "abcdabcdabcdabcd";
+		str = str.replace(/ab/g, "****");
+		console.log(str);
+
+		var arr = [3, 1, 9, 4, 6, 5];
+		var result = arr.join("-");
+		console.log(result);
+
+		var str = "3-1-9-4-6-5";
+		result = str.split("-");
+		console.log(result);
+		var str = "hello";
+		result = str.split("");
+		console.log(result);
+	</script>
+</body>
+</html>

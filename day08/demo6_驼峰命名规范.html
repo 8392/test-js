@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var str = "Learn hOw to PROgram in JAVASCRIPT with guides and tutorials";
+		// 将整个字符串转换为小写
+		str = str.toLowerCase();
+		// 将字符串以 空格 分割
+		var words = str.split(" ");
+		// 将第二个及之后元素单词首字母改为大写
+		for (var i = 1; i < words.length; i++) {
+			words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+		}
+		// console.log(words);
+		// 将数组中每个元素串联成字符串
+		str = words.join("");
+		console.log(str);
+
+		// "learnHowToProgramInJavascriptWithGuidesAndTutorials"
+	</script>
+</body>
+</html>

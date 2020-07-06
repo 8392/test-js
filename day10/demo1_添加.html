@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>动态生成一个表格</h1>
+	<input type="text" id="rows" value="5">行
+	<input type="text" id="cols" value="10">列
+	<button id="gen">生成</button>
+
+	<div id="result">
+		<p id="exist_p">段落</p>
+	</div>
+
+	<script>
+		document.getElementById("gen").onclick = function(){
+			// 获取动态创建表格时的行与列
+			var _rows = document.getElementById("rows").value,
+				_cols = document.getElementById("cols").value;
+
+			// 创建 <table> 元素
+			var _tab = document.createElement("table");
+
+			// 为 <table> 元素设置属性
+			_tab.setAttribute("border", "1");
+			_tab.className = "test";
+			_tab.title = "这是一个表格";
+
+			// 动态生成行
+			for (var i = 0; i < _rows; i++) {
+				// 创建 <tr> 元素
+				var _tr = document.createElement("tr");
+				// 将 <tr> 添加到 <table> 内部
+				_tab.appendChild(_tr);
+
+				// 每行动态生成单元格
+				for (var j = 0; j < _cols; j++) {
+					// 创建 <td> 元素
+					var _td = document.createElement("td");
+					// 将 <td> 添加到当前行 _tr 中
+					_tr.appendChild(_td);
+
+					/*// 创建文本节点(对象)
+					var _textContent = i + "_" + j,
+						_text = document.createTextNode(_textContent);
+					// 向单元格 <td> 内部添加文本
+					_td.appendChild(_text);*/
+
+					// 向 <td> 单元格内部添加文本
+					_td.innerHTML = "<a href='#'>链接</a>";
+					// _td.innerText = "<a href='#'>链接</a>";
+					// _td.innerText = i + "+" + j;
+				}
+			}
+
+			// 将创建的 <table> 元素添加到 div#result 内部末尾
+			document.getElementById("result").appendChild(_tab);
+
+			// 将创建的 <table> 元素添加到 div#result 内部 p 标签之前
+			// var ex = document.getElementById("exist_p");
+			// document.getElementById("result").insertBefore(_tab, ex);
+		}
+	</script>
+</body>
+</html>

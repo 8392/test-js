@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function max(m, n) {
+
+			do {
+				var r = m % n;
+				m = n;
+				n = r;
+			} while (r != 0);
+
+			return m;
+		}
+
+		function min (m, n) {
+			return m * n / max(m, n)
+		}
+
+		var m = max(35, 70);
+		console.log(m);
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*var test = function() {
+			test();
+		}
+
+		test();*/
+	</script>
+
+	<script>
+		// 求指定num表示项的计算结果
+		/*function fn(num) {
+			if (num <= 2)
+				return 1;
+			return fn(num - 1) + fn(num - 2);
+		}*/
+
+		var count = 0;
+		function fn(num) {
+			count++;
+			return num <= 2 ? 1 : fn(num - 1) + fn(num - 2);
+		}
+
+		console.time();
+		console.log(fn(40));
+		console.timeEnd();
+		console.log("38项调用次数：" + count);
+
+		/*fn(5) <==> fn(4) + fn(3)
+		fn(10) <==> fn(9) + fn(8)
+		fn(num) <==> fn(num-1) + fn(num-2)*/
+	</script>
+</body>
+</html>

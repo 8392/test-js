@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 判断数组中是否存在某值
+		function has(array, value) {
+			// 循环遍历数组每个元素，与待查找值作相等判断
+			// 如果有某个值与待查找值相等，则说明存在，返回 true
+			for (var i = 0, len = array.length; i < len; i++) {
+				if (array[i] === value)
+					return true;
+			}
+
+			// 循环结束后，都没有满足条件的元素存在，
+			// 则说明不存在，返回 false
+			return false;
+		}
+
+		function norepeat(array) {
+			// var newArray = [];
+			// for (var i = 0; i < array.length; i++) {
+			// 	// 判断当前 array 数组中遍历到的值在新数组 newArray 中是否存在
+			// 	// var b = has(newArray, array[i]);
+			// 	let b = newArray.includes(array[i])
+			// 	// 不存在，则说明第一次出现，添加到新数组中
+			// 	if (!b)
+			// 		newArray.push(array[i]);
+			// }
+
+			// return newArray;
+			return Array.from(new Set(array))
+		}
+
+		var arr = [1,2,3,4,6,1,2,2,1,2,3,5,6,7,8,9,2,9,5,2,8,1,7];
+		var result = norepeat(arr);
+		console.log(result);
+	</script>
+</body>
+</html>

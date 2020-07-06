@@ -1,0 +1,13 @@
+1. 封装函数，生成指定范围的随机整数
+	random(lower, upper)
+	如：调用 random(3, 7) 生成 3~7之间的随机整数，可包括3，不包括7
+2. 封装函数，将 URL 中查询字符串转换为对象
+	parseQueryString(url)
+	如：调用 parseQueryString("https://www.baidu.com/s?wd=html5&rsv_spt=1&rsv_iqid=0xff52079000030dcf")，返回
+	{
+		wd : "html5",
+		rsv_spt : "1",
+		rsv_iqid : "0xff52079000030dcf"
+	}
+3. 统计字符串 "adsfadqroiqwueroqiuteporewtrpwoerfdsmlmxkcm"中每个字符出现的次数
+4. 将 "Learn hOw to PROgram in JAVASCRIPT with guides and tutorials" 转换为 "learnHowToProgramInJavascriptWithGuidesAndTutorials"

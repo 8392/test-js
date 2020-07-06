@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/* 创建 Date 对象四种语法 */
+		// var date = new Date();
+		// var date = new Date(1000);
+		// var date = new Date("2015-03-25T16:47:23");
+		// var date = new Date(2018, 4, 7, 4, 7, 5);
+
+
+		// 修改日期：当前日期之前100天
+		var date = new Date()
+		date.setDate(date.getDate() - 100);
+
+		console.log(date);
+		// console.log(date.getTime());
+
+		/* 转换方法：将日期时间转换为字符串 */
+		console.log(date.toString())
+		console.log(date.toDateString())
+		console.log(date.toTimeString())
+		console.log(date.toLocaleString())
+		console.log(date.toLocaleDateString())
+		console.log(date.toLocaleTimeString())
+		console.log(date.toISOString())
+		console.log(date.toUTCString())
+
+		// 格式化日期时间：
+		// 将日期时间对象转换为 "yyyy-MM-dd HH:mm:ss" 格式的字符串
+		function format(datetime) {
+			// 获取年月日时分秒，不足两位时在前边补0
+			var year = datetime.getFullYear(),
+				month = ("0" + (datetime.getMonth() + 1)).slice(-2),
+				date = ("0" + datetime.getDate()).slice(-2),
+				hour = ("0" + datetime.getHours()).slice(-2),
+				min = ("0" + datetime.getMinutes()).slice(-2),
+				sec = ("0" + datetime.getSeconds()).slice(-2);
+
+			/*if (month < 10)
+				month = "0" + month; 
+			if (date < 10)
+				date = "0" + date;
+			if (hour < 10)
+				hour = "0" + hour;*/
+
+			// 返回字符串
+			return year + "年"+ month +"月"+ date +"日 "+ hour +":"+ min +":" + sec;
+		}
+
+		var str = format(date)
+		console.log(str);
+
+		// 将日期时间字符串转换为表示日期时间的毫秒值
+		var str = "2018-05-17T15:03:45";
+		var result = Date.parse(str);
+		console.log(result);
+	</script>
+</body>
+</html>

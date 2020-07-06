@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 判断数组中是否存在某值
+		function has(array, value) {
+			// 循环遍历数组每个元素，与待查找值作相等判断
+			// 如果有某个值与待查找值相等，则说明存在，返回 true
+			for (var i = 0, len = array.length; i < len; i++) {
+				if (array[i] === value)
+					return true;
+			}
+
+			// 循环结束后，都没有满足条件的元素存在，
+			// 则说明不存在，返回 false
+			return false;
+		}
+
+		var arr = [1,2,3,4,5],
+			search = 3;
+		var b = has(arr, search);
+		console.log(b)
+	</script>
+</body>
+</html>

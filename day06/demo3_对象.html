@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var stu = {
+			name : "老王",
+			age : 45,
+			action : function(){
+				console.log("翻墙...");
+			}
+		};
+
+
+
+		console.log("姓名：" + stu.name);
+		console.log("年龄：" + stu['age']);
+		stu.action();
+		stu["action"]();
+	</script>
+</body>
+</html>

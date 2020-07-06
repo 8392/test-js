@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// x 的 y 次方
+
+		/*//  求2的35次方
+		var result = 1;
+		// 循环，累乘
+		for(var i = 1; i <= 35; i++) {
+			result *= 2;
+		}
+		console.log(result);*/
+
+		// console.log(pow(5, 3))
+
+		/*// 定义函数，求x的y次方
+		function pow(x, y) {
+			var result = 1;
+			for (var i = 0; i < y; i++) {
+				result *= x;
+			}
+			return result;
+		}*/
+	</script>
+
+	<script>
+		// 定义数组，保存每个格子中存入芝麻数量
+		var count = new Array();
+		// 定义数组，保存每个格子中芝麻重量
+		var weight = new Array();
+		// 循环，向数组中添加保存的元素
+		for (var i = 0; i < 64; i++) {
+			// 各格子芝麻数量
+			count.push(Math.pow(2, i));
+			// 各格子芝麻重量
+			weight.push(count[i] * 0.00001);
+		}
+		// 显示
+		console.log(count);
+		console.log(weight)
+
+		// 总重量
+		var total = 0;
+		for (var i in weight) {
+			total += weight[i];
+		}
+		console.log(total);
+	</script>
+</body>
+</html>

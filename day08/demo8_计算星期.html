@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" id="year" value="2018">年
+	<input type="text" id="month" value="5">月
+	<input type="text" id="date" value="17">日
+	<button id="eq">是星期</button>
+	<input type="text" id="day" value="四">
+
+	<script>
+		// 计算输入的年月日 是星期几
+		document.getElementById("eq").onclick = function(){
+			// 获取输入的年月日
+			var _year = Number(document.getElementById("year").value),
+				_month = Number(document.getElementById("month").value),
+				_date = Number(document.getElementById("date").value);
+			// 创建日期时间对象
+			var datetime = new Date(_year, _month - 1, _date);
+			// 获取星期几
+			var _day = datetime.getDay(); 
+			_day = ["天", "一", "二", "三", "四", "五", "六"][_day];
+			document.getElementById("day").value = _day;
+		}
+	</script>
+</body>
+</html>

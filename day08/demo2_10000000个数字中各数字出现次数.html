@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*var array = [];
+		for (var i = 0; i < 10000; i++) {
+			array.push(Math.floor(Math.random() * 100));
+		}
+
+		// 计算 value 在 arr 数组中出现的次数
+		function count(value, arr) {
+			// 计数
+			var _count = 0;
+			// 遍历数组
+			arr.forEach(function(curr){
+				if (curr == value)
+					_count++;
+			});
+			// 返回计数
+			return _count;
+		}
+
+		function fn(arr) {
+			for (var i in arr) {
+				console.log(arr[i] + "出现次数：" + count(arr[i], arr));
+			}
+		}
+
+		fn(array);*/
+	</script>
+
+	<script>
+		/*// 所有随机值
+		array = [3, 7, 9, 1, 6, 5, 3, 1];
+
+		// 计数，计0-9之间各数字出现次数
+		count = [0, 2, 0, 2, 0, 1, 1, 1, 0, 1];
+		count[0] = 0; // 表示0出现的次数
+		count[1] = 2; // 表示1出现的次数
+		count[2] = 0; // 表示2出现的次数
+		count[3] = 2; 
+		count[5] = 1;
+		count[6] = 1;
+		count[7] = 1;
+		count[9] = 1;*/
+
+
+
+		// 存放所有随机值的数组
+		var array = [];
+		// 先生成 10000000 个随机 0~100 之间的数字
+		for (var i = 0; i < 10000000; i++) {
+			array.push(Math.floor(Math.random() * 100));
+		}
+		// 调用函数计算各数字出现次数
+		var c = fn(array);
+		// console.log(c);
+		/*for (var i in c) {
+			console.log(i + " 出现的次数：" + c[i]);
+		}*/
+		c.forEach(function(curr, index){
+			console.log(index + " 出现的次数：" + curr)
+		});
+
+
+		function fn(arr) {
+			// 计数
+			var count = [];
+			// 将 count 数组初始化100个0
+			for (var i = 0; i < 100; i++){
+				count.push(0);
+			}
+
+			// 遍历 arr 数组，计算各元素值出现的次数
+			arr.forEach(function(curr){
+				// 记录 curr 出现次数
+				count[curr]++;
+			});
+			// 返回 count 数组
+			return count;
+		}
+	</script>
+</body>
+</html>

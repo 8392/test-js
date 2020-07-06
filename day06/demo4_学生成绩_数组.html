@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 定义数组对象保存学生成绩
+		var scores = [85, 92, 76, 99, 100];
+		// var scores = new Array(85, 92, 76, 99, 100);
+		// var scores = new Array();
+		// var scores = [85];
+		// scores[0] = 82;
+		// console.log(scores[2]);
+
+		// 求平均分
+		var sum = 0;
+		for (var i = 0; i < 5; i++) {
+			sum += scores[i]
+		}
+		var avg = sum / 5;
+		console.log("平均分：" + avg);
+	</script>
+</body>
+</html>

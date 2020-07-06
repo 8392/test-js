@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var i = 15;
+		function outer() {
+			var j = 23;
+			(function () {
+				var k = 99;
+				console.log(k);
+				console.log(j);
+				console.log(i);
+				// console.log(m);
+			}())
+
+			// inner();
+		}
+
+		outer();
+	</script>
+</body>
+</html>

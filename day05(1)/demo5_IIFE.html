@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*(function(){
+			console.log("匿名函数");
+		})();*/
+
+		/*(function(){
+			console.log("匿名函数");
+		}());*/
+
+		/*!function(){
+			console.log("匿名函数");
+		}();*/
+
+		/*+function(){
+			console.log("匿名函数");
+		}();*/
+
+		var i = "全局i";
+
+		function test() {
+
+			(function(){
+				for (var i = 0; i < 5; i++) {
+					console.log("循环体内：" + i);
+				}
+			})();
+
+			console.log("循环后：" + i);
+		}
+
+		test();
+	</script>
+</body>
+</html>

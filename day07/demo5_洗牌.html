@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var type = ["红桃", "黑桃", "方块", "梅花"],
+			point = [2,3,4,5,6,7,8,9,10,"J","Q","K","A"],
+			cards = ["大王", "小王"]
+		for (var i in type) {
+			for (var j in point) {
+				cards.push(type[i] + point[j]);
+			}
+		}
+		console.log(cards);
+
+		// 循环遍历 cards 数组中每个元素
+		for (var i = 0, len = cards.length; i < len; i++) {
+			// 随机产生数组中下标
+			var rand = Math.floor(Math.random() * len);
+			// 将当前遍历到的值与随机下标处元素交换位置
+			var tmp = cards[i];
+			cards[i] = cards[rand];
+			cards[rand] = tmp;
+		}
+
+		console.log(cards);
+	</script>
+</body>
+</html>
